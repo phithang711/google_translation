@@ -3,7 +3,8 @@ import 'package:google_translator/src/model/google_support_language.dart';
 import 'package:google_translator/src/network/network_provider.dart';
 import 'package:google_translator/src/repository/google_translator_repository.dart';
 
-class GoogleTranslatorRepositoryImplement implements IGoogleTranslatorRepository {
+class GoogleTranslatorRepositoryImplement
+    implements IGoogleTranslatorRepository {
   String baseURL = "https://translation.googleapis.com/language/translate/v2";
 
   @override
@@ -16,13 +17,18 @@ class GoogleTranslatorRepositoryImplement implements IGoogleTranslatorRepository
       params['target'] = targetLanguage;
     }
 
-    return api.post("$baseURL/languages", queryParameters: {"key": googleApiKey}, data: params).then(
+    return api
+        .post("$baseURL/languages",
+            queryParameters: {"key": googleApiKey}, data: params)
+        .then(
       (response) {
         List<dynamic> data = response.data['data']['detections'];
         if (data.isEmpty) {
           return [];
         }
-        return data.map((value) => GoogleSupportLanguage.fromMap(value)).toList();
+        return data
+            .map((value) => GoogleSupportLanguage.fromMap(value))
+            .toList();
       },
     );
   }
@@ -37,13 +43,18 @@ class GoogleTranslatorRepositoryImplement implements IGoogleTranslatorRepository
       "q": inputText,
     };
 
-    return api.post("$baseURL/detect", queryParameters: {"key": googleApiKey}, data: params).then(
+    return api
+        .post("$baseURL/detect",
+            queryParameters: {"key": googleApiKey}, data: params)
+        .then(
       (response) {
         List<dynamic> data = response.data['data']['detections'];
         if (data.isEmpty) {
           return [];
         }
-        return data.map((value) => GoogleLanguageDetection.fromMap(value)).toList();
+        return data
+            .map((value) => GoogleLanguageDetection.fromMap(value))
+            .toList();
       },
     );
   }
