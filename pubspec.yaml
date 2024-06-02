@@ -1,7 +1,7 @@
 name: google_translator
 description: "Google Translator API Support for Dart"
-version: 0.0.1
-homepage:
+version: 0.1.0
+homepage: https://github.com/phithang711/google_translator
 
 environment:
   sdk: '>=3.3.4 <4.0.0'
