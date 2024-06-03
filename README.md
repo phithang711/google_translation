@@ -1,2 +1,2 @@
-# google_translator
+# google_translation
 Google Translator

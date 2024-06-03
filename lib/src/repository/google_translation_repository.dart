@@ -1,7 +1,7 @@
-import 'package:google_translator/src/model/google_language_detection.dart';
-import 'package:google_translator/src/model/google_support_language.dart';
+import 'package:google_translation/src/model/google_language_detection.dart';
+import 'package:google_translation/src/model/google_support_language.dart';
 
-abstract interface class IGoogleTranslatorRepository {
+abstract interface class IGoogleTranslationRepository {
   // Simple Translator (v2)
   Future<String> simpleTextTranslate({
     required String inputText,

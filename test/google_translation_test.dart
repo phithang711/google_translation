@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:google_translator/google_translator.dart';
-import 'package:google_translator/src/repository/google_translator_exception.dart';
+import 'package:google_translation/google_translation.dart';
+import 'package:google_translation/src/repository/google_translation_exception.dart';
 
 void main() {
   test('run without API key define', () async {

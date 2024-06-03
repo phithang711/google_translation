@@ -1,10 +1,10 @@
-import 'package:google_translator/src/model/google_language_detection.dart';
-import 'package:google_translator/src/model/google_support_language.dart';
-import 'package:google_translator/src/network/network_provider.dart';
-import 'package:google_translator/src/repository/google_translator_repository.dart';
+import 'package:google_translation/src/model/google_language_detection.dart';
+import 'package:google_translation/src/model/google_support_language.dart';
+import 'package:google_translation/src/network/network_provider.dart';
+import 'package:google_translation/src/repository/google_translation_repository.dart';
 
 class GoogleTranslatorRepositoryImplement
-    implements IGoogleTranslatorRepository {
+    implements IGoogleTranslationRepository {
   String baseURL = "https://translation.googleapis.com/language/translate/v2";
 
   @override
