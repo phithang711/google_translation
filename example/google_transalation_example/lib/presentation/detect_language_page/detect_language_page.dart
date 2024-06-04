@@ -34,9 +34,9 @@ class _DetectLanguagePageState extends State<DetectLanguagePage> {
                 decoration: const InputDecoration(border: OutlineInputBorder()),
               ),
               OutlinedButton(
-                onPressed: () => _didTapDetectLangauge(),
+                onPressed: () => _didTapDetectLanguage(),
                 child: const Text(
-                  "Detect langauge",
+                  "Detect language",
                 ),
               ),
               if (result != null)
@@ -55,7 +55,7 @@ class _DetectLanguagePageState extends State<DetectLanguagePage> {
     );
   }
 
-  Future<void> _didTapDetectLangauge() async {
+  Future<void> _didTapDetectLanguage() async {
     if (inputDetectLanguageTextController.text == "") {
       UtilDialog.showAlertNoApiKeyDialog(
           context: context,

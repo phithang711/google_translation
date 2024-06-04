@@ -1,3 +1,7 @@
+## 0.1.7
+
+* fix readme
+
 ## 0.1.6
 
 * update readme

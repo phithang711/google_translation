@@ -128,7 +128,7 @@ class _TranslationPageState extends State<TranslationPage> {
       UtilDialog.showAlertNoApiKeyDialog(
           context: context,
           dialogTitle: "No target language",
-          dialogMessage: "Please chose target langauge");
+          dialogMessage: "Please chose target language");
 
       return;
     }

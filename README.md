@@ -51,7 +51,7 @@ final result = await googleTranslation.simpleTextTranslate(
 print("Result: $result"); // output value
 ```
 
-#### **Langauge Detection**
+#### **Language Detection**
 
 For language detection, get list detect languages
 
@@ -61,24 +61,24 @@ final listDetectLanguages = await googleTranslation.simpleTextDetectLanguages(
     googleAPIKey: "YOUR_GOOGLE_API_KEY", // optional. If already setup above then doesn't need
 );
 
-print("List detect langauges: $listDetectLanguages"); // output value
+print("List detect languages: $listDetectLanguages"); // output value
 ```
 
-#### **Get Langauge Supported**
+#### **Get Language Supported**
 
 There are two methods support
 
-1. Get Supported langauge at default
+1. Get Supported language at default
 
 ``` dart
 final supportLanguages = await googleTranslation.getListSupportLanguages(
    googleAPIKey: "YOUR_GOOGLE_API_KEY", // optional. If already setup above then doesn't need
 );
 
-print("List support langauges: $supportLanguages"); // output value
+print("List support languages: $supportLanguages"); // output value
 ```
 
-2. Get Supported langauge at specific target localization
+2. Get Supported language at specific target localization
 
 ``` dart
 final supportLanguages = await googleTranslation.getListSupportLanguages(
@@ -86,7 +86,7 @@ final supportLanguages = await googleTranslation.getListSupportLanguages(
     googleAPIKey: "YOUR_GOOGLE_API_KEY", // optional. If already setup above then doesn't need
 );
 
-print("List support langauges: $supportLanguages"); // output value
+print("List support languages: $supportLanguages"); // output value
 ```
 
 

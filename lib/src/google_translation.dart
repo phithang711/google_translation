@@ -18,8 +18,8 @@ class GoogleTranslation {
     _googleApiKey = apiKey;
   }
 
-  /// Translate input text from source langauge to target language
-  /// If source lanaguage is not defined, auto detect langauge and trasnlate
+  /// Translate input text from source language to target language
+  /// If source lanaguage is not defined, auto detect language and trasnlate
   Future<String> simpleTextTranslate({
     required String inputText,
     String? sourceLanguage,
@@ -38,7 +38,7 @@ class GoogleTranslation {
     );
   }
 
-  /// Detect input text langauge and return list with confidence
+  /// Detect input text language and return list with confidence
   Future<List<GoogleLanguageDetection>> simpleTextDetectLanguages({
     required String inputText,
     String? googleAPIKey,
