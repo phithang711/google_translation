@@ -4,6 +4,7 @@ import 'package:google_translation/src/repository/google_translation_exception.d
 import 'package:google_translation/src/repository/google_translation_repository.dart';
 import 'package:google_translation/src/repository/google_translation_repository_implement.dart';
 
+/// This package is built for support multiplatform Google Translation API Key.
 class GoogleTranslation {
   String? _googleApiKey;
   late IGoogleTranslationRepository _repository;
@@ -12,10 +13,13 @@ class GoogleTranslation {
     _repository = GoogleTranslationRepositoryImplement();
   }
 
+  /// Setup API Key for once for no need update later
   void setupAPIKey(String apiKey) {
     _googleApiKey = apiKey;
   }
 
+  /// Translate input text from source langauge to target language
+  /// If source lanaguage is not defined, auto detect langauge and trasnlate
   Future<String> simpleTextTranslate({
     required String inputText,
     String? sourceLanguage,
@@ -34,9 +38,9 @@ class GoogleTranslation {
     );
   }
 
+  /// Detect input text langauge and return list with confidence
   Future<List<GoogleLanguageDetection>> simpleTextDetectLanguages({
     required String inputText,
-    bool onlyGetHighestConfidence = false,
     String? googleAPIKey,
   }) {
     if (googleAPIKey == null && _googleApiKey == null) {
@@ -46,10 +50,11 @@ class GoogleTranslation {
     return _repository.simpleTextDetectLanguages(
       inputText: inputText,
       googleApiKey: googleAPIKey ?? _googleApiKey!,
-      onlyGetHighestConfidence: onlyGetHighestConfidence,
     );
   }
 
+  /// Get list support languages by Google Translation API
+  /// If target language is defined, return with name with support language in that localized value.
   Future<List<GoogleSupportLanguage>> getListSupportLanguages({
     String? targetLanguage,
     String? googleAPIKey,

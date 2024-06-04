@@ -13,7 +13,6 @@ abstract interface class IGoogleTranslationRepository {
   Future<List<GoogleLanguageDetection>> simpleTextDetectLanguages({
     required String inputText,
     required String googleApiKey,
-    bool onlyGetHighestConfidence = false,
   });
 
   Future<List<GoogleSupportLanguage>> getListSupportLanguages({

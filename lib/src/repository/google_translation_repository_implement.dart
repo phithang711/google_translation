@@ -41,7 +41,6 @@ class GoogleTranslationRepositoryImplement
   Future<List<GoogleLanguageDetection>> simpleTextDetectLanguages({
     required String inputText,
     required String googleApiKey,
-    bool onlyGetHighestConfidence = false,
   }) {
     Map<String, String> params = {
       "q": inputText,

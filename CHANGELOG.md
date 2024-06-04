@@ -1,3 +1,7 @@
+## 0.1.5
+
+* add readme, example and comment
+
 ## 0.1.4
 
 * fix google detection API
