@@ -1,3 +1,7 @@
+## 0.1.3
+
+* add detect language and detech language with target language
+
 ## 0.1.2
 
 * update change log and refactor class

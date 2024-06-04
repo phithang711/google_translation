@@ -4,20 +4,21 @@ import 'dart:convert';
 // Inspire from https://cloud.google.com/translate/docs/reference/rest/v2/languages#getsupportedlanguagesresponselist
 class GoogleSupportLanguage {
   final String language;
-  final String name;
+  // Can be null if not provided target language when call API
+  final String? name;
 
-  GoogleSupportLanguage(
-    this.language,
+  GoogleSupportLanguage({
+    required this.language,
     this.name,
-  );
+  });
 
   GoogleSupportLanguage copyWith({
     String? language,
     String? name,
   }) {
     return GoogleSupportLanguage(
-      language ?? this.language,
-      name ?? this.name,
+      language: language ?? this.language,
+      name: name ?? this.name,
     );
   }
 
@@ -30,8 +31,8 @@ class GoogleSupportLanguage {
 
   factory GoogleSupportLanguage.fromMap(Map<String, dynamic> map) {
     return GoogleSupportLanguage(
-      map['language'] as String,
-      map['name'] as String,
+      language: map['language'] as String,
+      name: map['name'] != null ? map['name'] as String : null,
     );
   }
 

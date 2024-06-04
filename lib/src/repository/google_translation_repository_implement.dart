@@ -11,26 +11,30 @@ class GoogleTranslationRepositoryImplement
   Future<List<GoogleSupportLanguage>> getListSupportLanguages({
     String? targetLanguage,
     required String googleApiKey,
-  }) {
+  }) async {
     Map<String, String> params = {};
     if (targetLanguage != null) {
       params['target'] = targetLanguage;
     }
 
-    return api
-        .post("$baseURL/languages",
-            queryParameters: {"key": googleApiKey}, data: params)
-        .then(
-      (response) {
-        List<dynamic> data = response.data['data']['detections'];
-        if (data.isEmpty) {
-          return [];
-        }
-        return data
-            .map((value) => GoogleSupportLanguage.fromMap(value))
-            .toList();
-      },
-    );
+    final response = (targetLanguage != null)
+        ? await api.post(
+            "$baseURL/languages",
+            queryParameters: {"key": googleApiKey},
+            data: params,
+          )
+        : await api.get(
+            "$baseURL/languages",
+            queryParameters: {"key": googleApiKey},
+          );
+
+    List<dynamic> data = response.data['data']['languages'];
+
+    if (data.isEmpty) {
+      return [];
+    }
+
+    return data.map((value) => GoogleSupportLanguage.fromMap(value)).toList();
   }
 
   @override
