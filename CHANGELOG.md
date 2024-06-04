@@ -1,3 +1,7 @@
+## 0.1.6
+
+* update readme
+
 ## 0.1.5
 
 * add readme, example and comment

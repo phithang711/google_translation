@@ -15,17 +15,17 @@ Learn more about [Google Translation](https://cloud.google.com/translate/docs/ov
 
 ## Get started
 
-### Setup API Key
+### **Setup API Key**
 
 When using Google Translation API, you need to setup [Google Translation API key](https://cloud.google.com/translate/docs/setup).
 
-### Install
+### **Install**
 
 Add `google_translation` to your [pubspec dependencies](https://pub.dev/packages/google_translation/install).
 
-### Usage
+### **Usage**
 
-#### Configuration
+#### **Configuration**
 
 Setup Google Translation API for once.
 
@@ -36,7 +36,7 @@ googleTranslation.setupAPIKey("YOUR_GOOGLE_API_KEY");
 
 Google Translation API can update or overwrite when call function anytime.
 
-#### Simple Translation
+#### **Simple Translation**
 
 For translate text
 
@@ -51,7 +51,7 @@ final result = await googleTranslation.simpleTextTranslate(
 print("Result: $result"); // output value
 ```
 
-#### Langauge Detection
+#### **Langauge Detection**
 
 For language detection, get list detect languages
 
@@ -64,7 +64,7 @@ final listDetectLanguages = await googleTranslation.simpleTextDetectLanguages(
 print("List detect langauges: $listDetectLanguages"); // output value
 ```
 
-#### Get Langauge Supported
+#### **Get Langauge Supported**
 
 There are two methods support
 
