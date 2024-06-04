@@ -12,9 +12,8 @@ class UtilDialog {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text(dialogTitle),
-          content: (dialogMessage != "")
-              ? const Text('Please Input Google API Key')
-              : const SizedBox(),
+          content:
+              (dialogMessage != "") ? Text(dialogMessage) : const SizedBox(),
           actions: <Widget>[
             TextButton(
               child: const Text('OK'),
