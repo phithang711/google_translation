@@ -1,3 +1,3 @@
-## 0.1.0
+## 0.1.1
 
-* initial release supported for Google Translator API
+* update pubspec license
