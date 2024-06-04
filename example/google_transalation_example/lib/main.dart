@@ -4,7 +4,7 @@ import 'package:google_translation/google_translation.dart';
 // How to get API Key found here
 // https://cloud.google.com/translate/docs/setup
 const googleTranslateAPIKey = "";
-final googleTranslation = GoogleTranslator();
+final googleTranslation = GoogleTranslation();
 
 void main() {
   runApp(const MyApp());
@@ -38,10 +38,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   final TextEditingController apiKeyTextFieldController =
       TextEditingController(text: googleTranslateAPIKey);
-  List<String> listSupportedLangauges = [];
+  List<String> listGoogleSupportLanguages = [];
   String dropDownValue = "";
-
-  void _incrementCounter() {}
 
   @override
   void initState() {
@@ -71,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   const Text("List supported language"),
                   DropdownButton(
-                      items: listSupportedLangauges
+                      items: listGoogleSupportLanguages
                           .map<DropdownMenuItem<String>>((String value) {
                         return DropdownMenuItem<String>(
                           value: value,
@@ -81,7 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       value: dropDownValue,
                       onChanged: (String? chosenLanguage) {}),
                   OutlinedButton(
-                    onPressed: () {},
+                    onPressed: () => _didTapSyncListSupportedLanguage(),
                     child: const Text("Sync"),
                   ),
                 ],
@@ -102,13 +100,25 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
     );
   }
 
-  void _didTapSyncListSupportedLanguage() {}
+  Future<void> _didTapSyncListSupportedLanguage() async {
+    if (this.listGoogleSupportLanguages.isNotEmpty) {
+      return;
+    }
+
+    List<String> listGoogleSupportLanguages = [];
+
+    final supportLanguages = await googleTranslation.getListSupportLanguages(
+      googleAPIKey: apiKeyTextFieldController.text,
+    );
+    for (var value in supportLanguages) {
+      listGoogleSupportLanguages.add(value.language);
+    }
+
+    setState(() {
+      this.listGoogleSupportLanguages = listGoogleSupportLanguages;
+    });
+  }
 }
