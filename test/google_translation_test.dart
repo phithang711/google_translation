@@ -5,10 +5,10 @@ import 'package:google_translation/src/repository/google_translation_exception.d
 
 void main() {
   test('run without API key define', () async {
-    final googleTranslator = GoogleTranslator();
+    final googleTranslation = GoogleTranslation();
 
     try {
-      await googleTranslator.simpleTextTranslate(
+      await googleTranslation.simpleTextTranslate(
         inputText: "Hello",
         sourceLanguage: "en",
         targetLanguage: "vi",
@@ -17,8 +17,8 @@ void main() {
       expect(
         exception,
         allOf(
-          isA<GoogleTranslatorException>(),
-          predicate<GoogleTranslatorException>(
+          isA<GoogleTranslationException>(),
+          predicate<GoogleTranslationException>(
             (exceptionMessage) =>
                 exceptionMessage.toString() ==
                 "Google Translator Exception: API Key has not define",

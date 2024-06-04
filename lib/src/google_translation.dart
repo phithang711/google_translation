@@ -4,12 +4,12 @@ import 'package:google_translation/src/repository/google_translation_exception.d
 import 'package:google_translation/src/repository/google_translation_repository.dart';
 import 'package:google_translation/src/repository/google_translation_repository_implement.dart';
 
-class GoogleTranslator {
+class GoogleTranslation {
   String? _googleApiKey;
   late IGoogleTranslationRepository _repository;
 
-  GoogleTranslator() {
-    _repository = GoogleTranslatorRepositoryImplement();
+  GoogleTranslation() {
+    _repository = GoogleTranslationRepositoryImplement();
   }
 
   void setupAPIKey(String apiKey) {
@@ -23,7 +23,7 @@ class GoogleTranslator {
     String? googleAPIKey,
   }) {
     if (googleAPIKey == null && _googleApiKey == null) {
-      throw const GoogleTranslatorException("API Key has not define");
+      throw const GoogleTranslationException("API Key has not define");
     }
 
     return _repository.simpleTextTranslate(
@@ -40,7 +40,7 @@ class GoogleTranslator {
     String? googleAPIKey,
   }) {
     if (googleAPIKey == null && _googleApiKey == null) {
-      throw const GoogleTranslatorException("API Key has not define");
+      throw const GoogleTranslationException("API Key has not define");
     }
 
     return _repository.simpleTextDetectLanguages(
@@ -55,7 +55,7 @@ class GoogleTranslator {
     String? googleAPIKey,
   }) {
     if (googleAPIKey == null && _googleApiKey == null) {
-      throw const GoogleTranslatorException("API Key has not define");
+      throw const GoogleTranslationException("API Key has not define");
     }
 
     return _repository.getListSupportLanguages(

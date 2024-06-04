@@ -1,5 +1,5 @@
-abstract class IGoogleTranslatordException implements Exception {
-  const IGoogleTranslatordException([this.message]);
+abstract class IGoogleTranslationdException implements Exception {
+  const IGoogleTranslationdException([this.message]);
 
   final String? message;
 
@@ -11,6 +11,6 @@ abstract class IGoogleTranslatordException implements Exception {
   }
 }
 
-class GoogleTranslatorException extends IGoogleTranslatordException {
-  const GoogleTranslatorException([super.message]);
+class GoogleTranslationException extends IGoogleTranslationdException {
+  const GoogleTranslationException([super.message]);
 }
