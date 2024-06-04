@@ -1,3 +1,7 @@
+## 0.1.4
+
+* fix google detection API
+
 ## 0.1.3
 
 * add detect language and detech language with target language

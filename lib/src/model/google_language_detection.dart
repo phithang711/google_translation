@@ -5,23 +5,23 @@ import 'dart:convert';
 class GoogleLanguageDetection {
   final String language;
   final bool isReliable;
-  final double confidence;
+  final num confidence;
 
-  GoogleLanguageDetection(
-    this.language,
-    this.isReliable,
-    this.confidence,
-  );
+  GoogleLanguageDetection({
+    required this.language,
+    required this.isReliable,
+    required this.confidence,
+  });
 
   GoogleLanguageDetection copyWith({
     String? language,
     bool? isReliable,
-    double? confidence,
+    num? confidence,
   }) {
     return GoogleLanguageDetection(
-      language ?? this.language,
-      isReliable ?? this.isReliable,
-      confidence ?? this.confidence,
+      language: language ?? this.language,
+      isReliable: isReliable ?? this.isReliable,
+      confidence: confidence ?? this.confidence,
     );
   }
 
@@ -35,9 +35,9 @@ class GoogleLanguageDetection {
 
   factory GoogleLanguageDetection.fromMap(Map<String, dynamic> map) {
     return GoogleLanguageDetection(
-      map['language'] as String,
-      map['isReliable'] as bool,
-      map['confidence'] as double,
+      language: map['language'] as String,
+      isReliable: map['isReliable'] as bool,
+      confidence: map['confidence'] as num,
     );
   }
 
@@ -49,7 +49,7 @@ class GoogleLanguageDetection {
 
   @override
   String toString() =>
-      'LanguageDetection(language: $language, isReliable: $isReliable, confidence: $confidence)';
+      'GoogleLanguageDetection(language: $language, isReliable: $isReliable, confidence: $confidence)';
 
   @override
   bool operator ==(covariant GoogleLanguageDetection other) {

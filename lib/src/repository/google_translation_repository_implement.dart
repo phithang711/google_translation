@@ -52,7 +52,7 @@ class GoogleTranslationRepositoryImplement
             queryParameters: {"key": googleApiKey}, data: params)
         .then(
       (response) {
-        List<dynamic> data = response.data['data']['detections'];
+        List<dynamic> data = response.data['data']['detections'][0];
         if (data.isEmpty) {
           return [];
         }
