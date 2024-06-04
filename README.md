@@ -25,4 +25,69 @@ Add `google_translation` to your [pubspec dependencies](https://pub.dev/packages
 
 ### Usage
 
+#### Configuration
+
+Setup Google Translation API for once.
+
+``` dart
+final googleTranslation = GoogleTranslation();
+googleTranslation.setupAPIKey("YOUR_GOOGLE_API_KEY");
+```
+
+Google Translation API can update or overwrite when call function anytime.
+
 #### Simple Translation
+
+For translate text
+
+``` dart
+final result = await googleTranslation.simpleTextTranslate(
+    inputText: "TEXT_NEED_TRANSLATE",
+    sourceLanguage: "en", // optional
+    targetLanguage: "vi",
+    googleAPIKey: "YOUR_GOOGLE_API_KEY", // optional. If already setup above then doesn't need
+);
+
+print("Result: $result"); // output value
+```
+
+#### Langauge Detection
+
+For language detection, get list detect languages
+
+``` dart
+final listDetectLanguages = await googleTranslation.simpleTextDetectLanguages(
+    inputText: "TEXT_NEED_TO_DETECT_LANGUAGE",
+    googleAPIKey: "YOUR_GOOGLE_API_KEY", // optional. If already setup above then doesn't need
+);
+
+print("List detect langauges: $listDetectLanguages"); // output value
+```
+
+#### Get Langauge Supported
+
+There are two methods support
+
+1. Get Supported langauge at default
+
+``` dart
+final supportLanguages = await googleTranslation.getListSupportLanguages(
+   googleAPIKey: "YOUR_GOOGLE_API_KEY", // optional. If already setup above then doesn't need
+);
+
+print("List support langauges: $supportLanguages"); // output value
+```
+
+2. Get Supported langauge at specific target localization
+
+``` dart
+final supportLanguages = await googleTranslation.getListSupportLanguages(
+    targetLanguage: "en", // Define this
+    googleAPIKey: "YOUR_GOOGLE_API_KEY", // optional. If already setup above then doesn't need
+);
+
+print("List support langauges: $supportLanguages"); // output value
+```
+
+
+[Read more](https://cloud.google.com/translate/docs/basic/discovering-supported-languages#translate_list_language_names-drest)
