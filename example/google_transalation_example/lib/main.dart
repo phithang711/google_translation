@@ -43,6 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
       TextEditingController(text: googleTranslateAPIKey);
   List<String> listGoogleSupportLanguages = [];
   String? dropDownValue;
+  bool isLoading = false;
 
   @override
   void initState() {
@@ -115,6 +116,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   "Go to detecion language page",
                 ),
               ),
+              if (isLoading)
+                const Center(
+                  child: CircularProgressIndicator(),
+                ),
             ],
           ),
         ),
@@ -127,6 +132,10 @@ class _MyHomePageState extends State<MyHomePage> {
       _showAlertNoApiKeyDialog();
       return;
     }
+
+    setState(() {
+      isLoading = true;
+    });
 
     List<String> listGoogleSupportLanguages = [];
 
@@ -142,6 +151,7 @@ class _MyHomePageState extends State<MyHomePage> {
       if (listGoogleSupportLanguages.isNotEmpty) {
         dropDownValue = this.listGoogleSupportLanguages[0];
       }
+      isLoading = false;
     });
   }
 

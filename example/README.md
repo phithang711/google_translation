@@ -1,3 +1,16 @@
-In this example folder, there is an example app about how to use it.
+Google Translation API Example
 
-Download ***google_translation_example*** for more detail.
+Usage example
+
+``` dart
+final result = await GoogleTranslation().simpleTextTranslate(
+    inputText: "TEXT_NEED_TRANSLATE",
+    sourceLanguage: "en", // optional
+    targetLanguage: "vi",
+    googleAPIKey: "YOUR_GOOGLE_API_KEY", // optional. If already setup above then doesn't need
+);
+
+print("Result: $result"); // output value
+```
+
+Go to [google_translation_example](https://github.com/phithang711/google_translation/tree/main/example/google_transalation_example) to view more.
