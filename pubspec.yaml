@@ -1,6 +1,6 @@
 name: google_translation
 description: "Package to provide support for google translator API in Dart works for multiplatform"
-version: 0.1.7
+version: 0.1.8
 homepage: https://github.com/phithang711/google_translation
 
 environment:

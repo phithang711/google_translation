@@ -1,31 +1,35 @@
+## 0.1.8
+
+* Update example
+
 ## 0.1.7
 
-* fix readme
+* Fix readme
 
 ## 0.1.6
 
-* update readme
+* Update readme
 
 ## 0.1.5
 
-* add readme, example and comment
+* Add readme, example and comment
 
 ## 0.1.4
 
-* fix google detection API
+* Fix google detection API
 
 ## 0.1.3
 
-* add detect language and detech language with target language
+* Add detect language and detech language with target language
 
 ## 0.1.2
 
-* update change log and refactor class
+* Update change log and refactor class
 
 ## 0.1.1
 
-* update pubspec license
+* Update pubspec license
 
 ## 0.1.0
 
-* initial release
+* Initial release
