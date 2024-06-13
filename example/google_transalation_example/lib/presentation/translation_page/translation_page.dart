@@ -16,8 +16,7 @@ class TranslationPage extends StatefulWidget {
 class _TranslationPageState extends State<TranslationPage> {
   String? translateFromValue;
   String? translateToValue;
-  final TextEditingController inputTranslatedTextController =
-      TextEditingController();
+  final TextEditingController inputTranslatedTextController = TextEditingController();
 
   String? result;
 
@@ -48,14 +47,10 @@ class _TranslationPageState extends State<TranslationPage> {
                     padding: const EdgeInsets.symmetric(horizontal: 10.0),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15.0),
-                      border: Border.all(
-                          color: Colors.blue,
-                          style: BorderStyle.solid,
-                          width: 0.80),
+                      border: Border.all(color: Colors.blue, style: BorderStyle.solid, width: 0.80),
                     ),
                     child: DropdownButton(
-                        items: widget.listSupportedLanguage
-                            .map<DropdownMenuItem<String>>((String value) {
+                        items: widget.listSupportedLanguage.map<DropdownMenuItem<String>>((String value) {
                           return DropdownMenuItem<String>(
                             value: value,
                             child: Text(value),
@@ -79,14 +74,10 @@ class _TranslationPageState extends State<TranslationPage> {
                     padding: const EdgeInsets.symmetric(horizontal: 10.0),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15.0),
-                      border: Border.all(
-                          color: Colors.blue,
-                          style: BorderStyle.solid,
-                          width: 0.80),
+                      border: Border.all(color: Colors.blue, style: BorderStyle.solid, width: 0.80),
                     ),
                     child: DropdownButton(
-                        items: widget.listSupportedLanguage
-                            .map<DropdownMenuItem<String>>((String value) {
+                        items: widget.listSupportedLanguage.map<DropdownMenuItem<String>>((String value) {
                           return DropdownMenuItem<String>(
                             value: value,
                             child: Text(value),
@@ -104,7 +95,7 @@ class _TranslationPageState extends State<TranslationPage> {
               OutlinedButton(
                 onPressed: () => _didTapTrasnlateLanguage(),
                 child: const Text(
-                  "Trasnlate",
+                  "Translate",
                 ),
               ),
               if (result != null)
@@ -125,19 +116,13 @@ class _TranslationPageState extends State<TranslationPage> {
 
   Future<void> _didTapTrasnlateLanguage() async {
     if (translateToValue == null || translateFromValue == "") {
-      UtilDialog.showAlertNoApiKeyDialog(
-          context: context,
-          dialogTitle: "No target language",
-          dialogMessage: "Please chose target language");
+      UtilDialog.showAlertNoApiKeyDialog(context: context, dialogTitle: "No target language", dialogMessage: "Please chose target language");
 
       return;
     }
 
     if (inputTranslatedTextController.text == "") {
-      UtilDialog.showAlertNoApiKeyDialog(
-          context: context,
-          dialogTitle: "No translate text",
-          dialogMessage: "Please input text to translate");
+      UtilDialog.showAlertNoApiKeyDialog(context: context, dialogTitle: "No translate text", dialogMessage: "Please input text to translate");
 
       return;
     }

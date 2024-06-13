@@ -39,8 +39,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final TextEditingController apiKeyTextFieldController =
-      TextEditingController(text: googleTranslateAPIKey);
+  final TextEditingController apiKeyTextFieldController = TextEditingController(text: googleTranslateAPIKey);
   List<String> listGoogleSupportLanguages = [];
   String? dropDownValue;
   bool isLoading = false;
@@ -84,8 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                     child: DropdownButton(
-                        items: listGoogleSupportLanguages
-                            .map<DropdownMenuItem<String>>((String value) {
+                        items: listGoogleSupportLanguages.map<DropdownMenuItem<String>>((String value) {
                           return DropdownMenuItem<String>(
                             value: value,
                             child: Text(value),
